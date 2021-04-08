@@ -15,5 +15,12 @@
         "psr-4": {
             "SawanMahajan\\Contact\\": "src/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "SawanMahajan\\Contact\\ContactServiceProvider"
+            ]
+        }
     }
 }
