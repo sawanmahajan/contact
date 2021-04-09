@@ -10,15 +10,30 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .form-signin {
+                width: 100%;
+                max-width: 400px;
+                padding: 15px;
+                margin: auto;
+            }
+        </style>
 </head>
 
 <body>
-    <div class="container-fluid">
+    <div class="container form-signin">
+        @if(Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+
+        <h3 class="text-center mt-5">
+            Contact Us Any Time
+        </h3>
+
         <form action="{{ route('contact')}}" method="post">
             @csrf
-            <h1>
-                Contact Us Any Time
-            </h1>
             <div class="form-group">
                 <label for="txtName">Name</label>
                 <input type="text" class="form-control" id="txtName" name="txtName" placeholder="Your Name">

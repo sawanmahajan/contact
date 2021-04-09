@@ -22,6 +22,6 @@ class ContactController extends Controller
         $contact->save();
 
         Mail::to(config('contact.send_email_to'))->send(new ContactMailer($request->txtMessage, $request->txtName));
-        return redirect(route('contact'));
+        return redirect(route('contact'))->with(['message' => 'Thank you, your mail has been sent successfully.']);;
     }
 }
